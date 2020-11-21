@@ -1,10 +1,14 @@
-Array.prototyp.media = function () {
-  let numeros;
+Array.prototype.media = function() {
+    // Calcula la media de los valores del array
+    let totalArray = this.reduce((a, b) => (a + b));
+    return totalArray / this.length;
+}
 
-  Array.forEach((clave, valor) => {
-    numeros += valor;
-  });
+const prueba = new Array(5);
 
-  let media;
-  return media / Array.length;
-};
+for (let i = 0; i < 5; i++) {
+    prueba[i] = 4 + i;
+}
+document.write("La media es " + prueba.media());
+console.log(prueba);
+console.log("La media es " + prueba.media());
